@@ -16,7 +16,7 @@ const CardComponent: React.FC<CardComponentProps> = ({ title, image, text }) => 
     };
 
     return (
-        <div className="card-container" onClick={handleClick}>
+        <div className="card-container cursor-pointer" onClick={handleClick}>
             <div className={`card ${isFlipped ? 'flipped' : ''}`} style={{ width: '18rem', height: '30rem', borderRadius: '15px', backgroundColor: '#FCF3F6' }}>
                 <div className="card-inner">
                     <div className="card-front">

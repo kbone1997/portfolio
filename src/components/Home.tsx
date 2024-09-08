@@ -19,46 +19,51 @@ import linux from './icons/icons8-linux.gif';
 
 const Home: React.FC = () => {
     return (
-        <section id="home" className="flex items-center justify-center h-screen overflow-y-scroll mt-20">
-            <div className="bg-white rounded-lg shadow-md p-6 h-auto w-75">
-                <div className="mb-8">
-                    <h2 className="text-xl font-bold mb-4 text-center">Programming Languages</h2>
-                    <div className="flex flex-wrap justify-center border-solid border-1 hover:bg-slate-300">
-                        <SkillCard image={javascript} alt="JavaScript" label="JavaScript" />
-                        <SkillCard image={typescript} alt="TypeScript" label="TypeScript" />
-                        <SkillCard image={python} alt="Python" label="Python" />
-                        <SkillCard image={java} alt="Java" label="Java" />
+        <section id="home" className="flex items-center justify-center w-full h-screen mt-10 p-24 bg-primaryBackground dark:bg-secondaryBackgroundDark">
+            <div className="dark:bg-subBackGroundDark rounded-lg shadow-md p-6 h-full w-5/6 flex flex-col gap-3">
+                <div className='flex flex-row w-full h-1/2 gap-3'>
+                    <div className='flex flex-col h-full w-1/2 border-2 border-transparent dark:hover:border-violet-400 dark:bg-sectionBackgroundDark rounded-md p-2'>
+                        <h2 className="text-xl mb-4 text-center dark:text-white">Programming Languages</h2>
+                        <div className="flex flex-wrap justify-center gap-1">
+                            <SkillCard image={javascript} alt="JavaScript" label="JavaScript" />
+                            <SkillCard image={typescript} alt="TypeScript" label="TypeScript" />
+                            <SkillCard image={python} alt="Python" label="Python" />
+                            <SkillCard image={java} alt="Java" label="Java" />
+                        </div>
+                    </div>
+                    <div className='flex flex-col h-full w-1/2 border-2 border-transparent dark:hover:border-violet-400 dark:bg-sectionBackgroundDark rounded-md p-2'>
+                        <h2 className="text-xl mb-4 text-center dark:text-white">Web and Mobile Programming and Technologies</h2>
+                        <div className="flex flex-wrap justify-center gap-1">
+                            <SkillCard image={react} alt="React" label="React" />
+                            <SkillCard image={flutter} alt="flutter" label="flutter" />
+                            <SkillCard image={nextjs} alt="Next.js" label="Next.js" />
+                            <SkillCard image={html} alt="HTML" label="HTML" />
+                            <SkillCard image={tailwind} alt="Tailwind CSS" label="Tailwind CSS" />
+                        </div>
                     </div>
                 </div>
-                <div className="mb-8">
-                    <h2 className="text-xl font-bold mb-4 text-center">Web and Mobile Programming and Technologies</h2>
-                    <div className="flex flex-wrap justify-center border-2 hover:bg-slate-300">
-                        <SkillCard image={react} alt="React" label="React" />
-                        <SkillCard image={flutter} alt="flutter" label="flutter" />
-                        <SkillCard image={nextjs} alt="Next.js" label="Next.js" />
-                        <SkillCard image={html} alt="HTML" label="HTML" />
-                        <SkillCard image={tailwind} alt="Tailwind CSS" label="Tailwind CSS" />
+                <div className='flex flex-row w-full h-1/2 gap-3'>
+                    <div className='flex flex-col h-full w-1/2 border-2 border-transparent dark:hover:border-violet-400 dark:bg-sectionBackgroundDark rounded-md p-2'>
+                        <h2 className="text-xl mb-4 text-center dark:text-white">Databases and Backend</h2>
+                        <div className="flex flex-wrap justify-center gap-1">
+                            <SkillCard image={mysql} alt="MySQL" label="MySQL" />
+                            <SkillCard image={postgresql} alt="PostgreSQL" label="PostgreSQL" />
+                            <SkillCard image={django} alt="Django" label="Django" />
+                            <SkillCard image={firebase} alt="Firebase" label="Firebase" />
+                        </div>
                     </div>
-                </div>
-                <div className="mb-8">
-                    <h2 className="text-xl font-bold mb-4 text-center">Databases and Backend</h2>
-                    <div className="flex flex-wrap justify-center border-2 hover:bg-slate-300">
-                        <SkillCard image={mysql} alt="MySQL" label="MySQL" />
-                        <SkillCard image={postgresql} alt="PostgreSQL" label="PostgreSQL" />
-                        <SkillCard image={django} alt="Django" label="Django" />
-                        <SkillCard image={firebase} alt="Firebase" label="Firebase" />
-                    </div>
-                </div>
-                <div>
-                    <h2 className="text-xl font-bold mb-4 text-center">Operating Systems</h2>
-                    <div className="flex flex-wrap justify-center border-2 hover:bg-slate-300">
-                        <SkillCard image={windows} alt="Windows" label="Windows" />
-                        <SkillCard image={mac} alt="Mac" label="Mac" />
-                        <SkillCard image={linux} alt="Linux" label="Linux" />
+                    <div className='flex flex-col h-full w-1/2 border-2 border-transparent dark:hover:border-violet-400 dark:bg-sectionBackgroundDark rounded-md p-2'>
+                        <h2 className="text-xl mb-4 text-center dark:text-white">Operating Systems</h2>
+                        <div className="flex flex-wrap justify-center gap-1">
+                            <SkillCard image={windows} alt="Windows" label="Windows" />
+                            <SkillCard image={mac} alt="Mac" label="Mac" />
+                            <SkillCard image={linux} alt="Linux" label="Linux" />
+                        </div>
                     </div>
                 </div>
             </div>
-        </section>
+
+        </section >
     );
 };
 
@@ -70,9 +75,9 @@ interface SkillCardProps {
 
 const SkillCard: React.FC<SkillCardProps> = ({ image, alt, label }) => {
     return (
-        <div className="text-center m-4">
-            <img src={image} alt={alt} className="block mx-auto rounded-lg mb-2" style={{ maxWidth: '150px', maxHeight: '150px' }} />
-            <p className="text-sm font-medium">{label}</p>
+        <div className="cursor-pointer flex flex-col justify-center items-center border-2 border-transparent hover:dark:border-violet-400 p-4 rounded-md">
+            <img src={image} alt={alt} className="w-12 h-12 rounded-md" />
+            <p className="text-sm dark:text-white">{label}</p>
         </div>
     );
 };

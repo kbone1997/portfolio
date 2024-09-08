@@ -1,11 +1,15 @@
 import React, { useEffect, useState } from 'react';
 import { motion, AnimatePresence, useScroll } from 'framer-motion';
+import lightTheme from "./icons/brightness.png";
+import darkTheme from "./icons/dark-mode.png";
+import { FaTerminal } from 'react-icons/fa';
 
 
 const Header: React.FC = () => {
     const [isPortfolio, setIsPortfolio] = useState(true);
     const [isVisible, setIsVisible] = useState(true);
     const { scrollYProgress } = useScroll();
+    const [darkMode, setDarkMode] = useState(false);
 
     useEffect(() => {
         const interval = setInterval(() => {
@@ -19,11 +23,34 @@ const Header: React.FC = () => {
         return () => clearInterval(interval); // Cleanup interval on component unmount
     }, []);
 
+    useEffect(() => {
+        const savedTheme = localStorage.getItem('theme');
+        if (savedTheme === 'dark') {
+            setDarkMode(true);
+            document.documentElement.classList.add('dark');
+        } else {
+            setDarkMode(false);
+            document.documentElement.classList.remove('dark');
+        }
+    }, []);
+
+    // Function to toggle between light and dark modes
+    const toggleDarkMode = () => {
+        if (darkMode) {
+            document.documentElement.classList.remove('dark');
+            localStorage.setItem('theme', 'light');
+        } else {
+            document.documentElement.classList.add('dark');
+            localStorage.setItem('theme', 'dark');
+        }
+        setDarkMode(!darkMode);
+    };
+
+
     return (
-        <header className="bg-dark text-white py-3 fixed-top">
-            <nav className="container d-flex justify-content-between align-items-center px-3">
-                <div className="text-xl font-bold position-relative" style={{ height: '32px' }}>
-                    <motion.div className="progress-bar" style={{ scaleX: scrollYProgress }} />
+        <header className="bg-colorGreenish dark:bg-primaryBackgroundDark text-white py-3 fixed-top border-b-2 border-colorDeepGreenish dark:border-violet-600">
+            <nav className=" flex flex-row justify-between items-center px-[10%] w-full">
+                <div className="w-1/3 text-xl font-bold position-relative" style={{ height: '32px' }}>
                     <AnimatePresence>
                         {isVisible && (
                             <motion.div
@@ -38,7 +65,22 @@ const Header: React.FC = () => {
                         )}
                     </AnimatePresence>
                 </div>
-                <ul className="nav">
+                <div className="w-1/3 mx-auto">
+                    <div className="relative">
+                        <input
+                            type="text"
+                            className="w-full pl-14 py-2 border rounded-xl text-gray-900 text-sm font-semibold border-gray-300 dark:border-gray-600 placeholder-gray-500 dark:placeholder-gray-400 focus:outline-none focus:ring-0"
+                            placeholder="Execute Command ... "
+                        />
+                        <div className="absolute inset-y-0 left-0 flex items-center px-3 text-gray-500 dark:text-gray-400 bg-colorDeepGreenish dark:bg-gray-700 rounded-lg">
+                            <FaTerminal color='white' />
+                        </div>
+                    </div>
+                </div>
+                <ul className="nav w-1/3 justify-end">
+                    <li className="flex nav-item items-center pr-[5%]">
+                        <img src={darkMode ? darkTheme : lightTheme} onClick={toggleDarkMode} className="w-6 h-6 cursor-pointer" />
+                    </li>
                     <li className="nav-item">
                         <a href="#home" className="nav-link text-white">
                             Home
@@ -61,6 +103,7 @@ const Header: React.FC = () => {
                     </li>
                 </ul>
             </nav>
+            <motion.div className="progress-bar" style={{ scaleX: scrollYProgress }} />
         </header>
     );
 };

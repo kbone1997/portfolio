@@ -25,12 +25,12 @@ function About() {
     ];
 
     return (
-        <section id="home" className="d-flex align-items-center justify-content-center bg-light" style={{ height: '100vh', overflow: 'hidden' }}>
-            <div className="text-center bg-white rounded-lg p-4 h-75 w-75 shadow-md hover-shadow-red transition transform-hover timeline">
+        <section id="home" className="flex items-center justify-center bg-light h-screen">
+            <div className="flex flex-col text-center bg-white rounded-lg p-4 h-4/5 w-4/5 shadow-md hover-shadow-red transition transform-hover timeline">
                 <h2 className="text-xl font-bold text-center">Educational Backgound</h2>
-                <div className="timeline-container h-100 d-flex justify-content-center">
+                <div className="w-full h-full flex flex-row">
                     {timelineData.map((data, index) => (
-                        <div key={index} className={`timeline-card`}>
+                        <div key={index} className={"flex w-full h-full items-center justify-center"}>
                             <CardComponent title={data.title} image={data.image} text={data.text} />
                         </div>
                     ))}

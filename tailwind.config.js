@@ -17,7 +17,7 @@ module.exports = {
         primaryBackgroundDark: "#0E0E10",
         secondaryBackground: "#CFE1B9",
         secondaryBackgroundDark: "#151314",
-        sectionBackground: "",
+        sectionBackground: "#B5C99A",
         sectionBackgroundDark: "#5A5A5A",
         subBackGround: "",
         subBackGroundDark: "#303030",

@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { motion, AnimatePresence, useScroll } from 'framer-motion';
-import lightTheme from "./icons/brightness.png";
-import darkTheme from "./icons/dark-mode.png";
+import lightTheme from "../assets/icons/brightness.png";
+import darkTheme from "../assets/icons/dark-mode.png";
 import { FaTerminal } from 'react-icons/fa';
 
 

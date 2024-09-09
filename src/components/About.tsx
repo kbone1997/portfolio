@@ -2,8 +2,8 @@ import React from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import '../App.css';
 import CardComponent from './Card';
-import noor from './icons/noor.jpg'
-import uiu from './icons/uiu.jpg'
+import noor from '../assets/icons/noor.jpg'
+import uiu from '../assets/icons/uiu.jpg'
 
 function About() {
     const timelineData = [

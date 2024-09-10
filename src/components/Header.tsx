@@ -77,27 +77,27 @@ const Header: React.FC = () => {
                         </div>
                     </div>
                 </div>
-                <ul className="nav w-1/3 justify-end">
-                    <li className="flex nav-item items-center pr-[5%]">
-                        <img src={darkMode ? darkTheme : lightTheme} onClick={toggleDarkMode} className="w-6 h-6 cursor-pointer" />
+                <ul className="nav w-1/3 justify-end " >
+                    <li className="flex nav-item items-center pr-[5%] w-1/6">
+                        <img src={darkMode ? darkTheme : lightTheme} onClick={toggleDarkMode} className="w-6 h-6 cursor-pointer hover:w-7 hover:h-7 ease-out delay-100" />
                     </li>
-                    <li className="nav-item">
-                        <a href="#home" className="nav-link text-white">
+                    <li className="nav-item w-1/6">
+                        <a href="#home" className="nav-link hover:font-bold" style={{ color: darkMode ? "white" : "black" }}>
                             Home
                         </a>
                     </li>
-                    <li className="nav-item">
-                        <a href="#about" className="nav-link text-white">
+                    <li className="nav-item w-1/6">
+                        <a href="#about" className="nav-link  hover:font-bold" style={{ color: darkMode ? "white" : "black" }}>
                             About
                         </a>
                     </li>
-                    <li className="nav-item">
-                        <a href="#career" className="nav-link text-white">
+                    <li className="nav-item w-1/6">
+                        <a href="#career" className="nav-link  hover:font-bold" style={{ color: darkMode ? "white" : "black" }}>
                             Career
                         </a>
                     </li>
-                    <li className="nav-item">
-                        <a href="#contact" className="nav-link text-white">
+                    <li className="nav-item w-1/6">
+                        <a href="#contact" className="nav-link  hover:font-bold" style={{ color: darkMode ? "white" : "black" }}>
                             Contact
                         </a>
                     </li>

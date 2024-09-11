@@ -25,9 +25,9 @@ function About() {
     ];
 
     return (
-        <section id="home" className="flex items-center justify-center w-full h-screen bg-primaryBackground dark:bg-secondaryBackgroundDark">
+        <section id="about" className="flex items-center justify-center w-full h-screen bg-primaryBackground dark:bg-secondaryBackgroundDark">
             <div className="bg-secondaryBackground dark:bg-subBackGroundDark flex flex-col text-center rounded-lg p-4 w-3/4 h-4/5 shadow-md hover-shadow-red transition transform-hover timeline">
-                <h2 className="text-xl font-bold text-center dark:text-white">Educational Backgound</h2>
+                <h2 className="text-3xl font-bold text-center dark:text-white">Educational Backgound</h2>
                 <div className="w-full h-full flex flex-row">
                     {timelineData.map((data, index) => (
                         <div key={index} className={"flex w-full h-full items-center justify-center"}>

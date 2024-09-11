@@ -23,7 +23,7 @@ const Home: React.FC = () => {
 
             <div className="bg-secondaryBackground dark:bg-subBackGroundDark rounded-lg shadow-md p-6  flex flex-col h-full w-5/6 gap-3">
 
-                <h2 className="text-xl font-bold text-center dark:text-white">Technologies</h2>
+                <h2 className="text-3xl font-bold text-center dark:text-white">Technologies</h2>
                 <div className='flex flex-row w-full h-1/2 gap-3'>
                     <div className='flex flex-col h-full w-1/2 shadow-md border-2 border-transparent dark:hover:border-violet-400 hover:border-colorDeepGreenish bg-sectionBackground dark:bg-sectionBackgroundDark rounded-md p-2'>
                         <h2 className="text-xl mb-4 text-center dark:text-white">Programming Languages</h2>

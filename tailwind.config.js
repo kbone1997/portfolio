@@ -24,10 +24,19 @@ module.exports = {
         colorGreenish: "#87986A",
         colorDeepGreenish: "#718355",
       },
+      screens: {  // Add custom screen sizes if needed
+        'xs': '475px',   // Extra small screens
+        'sm': '640px',   // Small screens (default Tailwind)
+        'md': '768px',   // Medium screens (default Tailwind)
+        'lg': '1024px',  // Large screens (default Tailwind)
+        'xl': '1280px',  // Extra large screens (default Tailwind)
+        '2xl': '1536px', // Extra-extra large screens (default Tailwind)
+        '3xl': '1800px', // Custom larger screen for desktops
+      },
       height: {
         '4/5': '80%',
       },
     },
   },
-  plugins: [flowbite.plugin(),],
+  plugins: [flowbite.plugin(), require("@xpd/tailwind-3dtransforms")],
 }

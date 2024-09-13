@@ -6,6 +6,8 @@ import firstBG from "../assets/images/firstBG.png";
 import secondBG from "../assets/images/secondBG.png";
 import thirdBG from "../assets/images/thirdBG.png";
 import fourthBG from "../assets/images/fourthBG.png";
+import downloadDark from "../assets/icons/download.png"
+import downloadLight from "../assets/icons/downloadAlt.png"
 
 export default function MultiLayer() {
     const ref = useRef(null);
@@ -21,6 +23,7 @@ export default function MultiLayer() {
     const thirdBGY = useTransform(scrollYProgress, [0, 1], ["0%", "20%"]);
     const fourthBGY = useTransform(scrollYProgress, [0, 1], ["0%", "10%"]);
     const textY = useTransform(scrollYProgress, [0, 1], ["0%", "250%"]);
+    const downloadY = useTransform(scrollYProgress, [0, 1], ["0%", "-150%"]);
     const theme = localStorage.getItem("theme");
 
     const titles = [
@@ -44,12 +47,22 @@ export default function MultiLayer() {
     return (
         <div
             ref={ref}
-            className="w-full h-screen overflow-hidden relative grid place-items-center"
+            className="w-full h-screen overflow-hidden relative grid place-items-center "
         >
+            <motion.div
+                style={{ y: downloadY }}
+                className="absolute z-[10] pt-[8%] pr-[5%] flex flex-row w-full h-full items-start justify-end gap-2"
+            >
+                <img src={theme === "dark" ? downloadDark : downloadLight} alt={downloadDark} className="w-6 h-6 cursor-pointer rounded-full hover:scale-125" onClick={() => {
+                    const link = document.createElement('a');
+                    link.href = "/assets/DohaKhanMozlish.pdf"; // Path to your PDF file
+                    link.download = 'sample.pdf'; // The name of the downloaded file
+                    link.click();
+                }} />
+            </motion.div>
 
 
             <div className="w-full h-screen flex flex-row items-center justify-center">
-
                 <motion.div
                     style={{ y: textY }}
                     className="z-[3] pb-[10%] flex flex-row w-1/3 items-center justify-center gap-2"

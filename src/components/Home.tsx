@@ -54,7 +54,7 @@ const Home: React.FC = () => {
                                 <SkillCard image={firebase} alt="Firebase" label="Firebase" />
                             </div>
                         </div>
-                        <div className='flex flex-col h-full w-1/2 shadow-md border-2 border-transparent dark:hover:border-violet-400 hover:border-colorDeepGreenish bg-sectionBackground dark:bg-sectionBackgroundDark rounded-md p-2'>
+                        <div className='flex flex-col h-full w-1/2 shadow-md border-2 border-transparent dark:hover:border-violet-400/[0.2] hover:border-colorDeepGreenish bg-sectionBackground dark:bg-sectionBackgroundDark rounded-md p-2'>
                             <h2 className="text-xl mb-4 text-center dark:text-white">Operating Systems</h2>
                             <div className="flex flex-wrap justify-center gap-1 overflow-y-auto">
                                 <SkillCard image={windows} alt="Windows" label="Windows" />

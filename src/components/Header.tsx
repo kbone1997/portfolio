@@ -3,6 +3,7 @@ import { motion, AnimatePresence, useScroll } from 'framer-motion';
 import lightTheme from "../assets/icons/brightness.png";
 import darkTheme from "../assets/icons/dark-mode.png";
 import { FaTerminal } from 'react-icons/fa';
+import AnimatedButton from './animatedButton';
 
 
 const Header: React.FC = () => {
@@ -81,24 +82,24 @@ const Header: React.FC = () => {
                     <li className="flex nav-item items-center pr-[5%] w-1/6">
                         <img src={darkMode ? darkTheme : lightTheme} onClick={toggleDarkMode} className="w-6 h-6 cursor-pointer hover:w-7 hover:h-7 ease-out delay-100" />
                     </li>
-                    <li className="nav-item w-1/6">
-                        <a href="#home" className="nav-link hover:font-bold" style={{ color: darkMode ? "white" : "black" }}>
-                            Home
+                    <li className="w-1/6">
+                        <a href="#home" className=" hover:font-bold" >
+                            <AnimatedButton title={'Home'} handleClick={() => { }} icon={undefined} position={''}></AnimatedButton>
                         </a>
                     </li>
-                    <li className="nav-item w-1/6">
-                        <a href="#about" className="nav-link  hover:font-bold" style={{ color: darkMode ? "white" : "black" }}>
-                            About
+                    <li className="w-1/6">
+                        <a href="#about" className=" hover:font-bold" >
+                            <AnimatedButton title={'About'} handleClick={() => { }} icon={undefined} position={''}></AnimatedButton>
                         </a>
                     </li>
-                    <li className="nav-item w-1/6">
-                        <a href="#career" className="nav-link  hover:font-bold" style={{ color: darkMode ? "white" : "black" }}>
-                            Career
+                    <li className="w-1/6">
+                        <a href="#career" className=" hover:font-bold" >
+                            <AnimatedButton title={'Career'} handleClick={() => { }} icon={undefined} position={''}></AnimatedButton>
                         </a>
                     </li>
-                    <li className="nav-item w-1/6">
-                        <a href="#contact" className="nav-link  hover:font-bold" style={{ color: darkMode ? "white" : "black" }}>
-                            Contact
+                    <li className="w-1/6">
+                        <a href="#contact" className=" hover:font-bold" >
+                            <AnimatedButton title={'Contact'} handleClick={() => { }} icon={undefined} position={''}></AnimatedButton>
                         </a>
                     </li>
                 </ul>

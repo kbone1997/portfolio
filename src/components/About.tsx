@@ -10,17 +10,17 @@ function About() {
         {
             title: "School",
             image: noor,
-            text: "Description about my school life."
+            text: "Bir Shrestha Noor Mohammad Rifles Public School and College. \n\n2004 - 2015"
         },
         {
             title: "College",
             image: noor,
-            text: "Description about my college life."
+            text: "Bir Shrestha Noor Mohammad Rifles Public School and College. \n\n2015 - 2017"
         },
         {
             title: "University",
             image: uiu,
-            text: "Description about my university life."
+            text: "United International university.\n\n2018 - 2023"
         },
     ];
 

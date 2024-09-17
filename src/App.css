@@ -55,17 +55,6 @@ main {
   padding: 2rem 0;
 }
 
-/* Timeline line */
-.timeline-line {
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  left: 50%;
-  width: 4px;
-  background-color: #d4d4d4;
-  transform: translateX(-50%);
-}
-
 /* Individual card */
 .timeline-card {
   margin-right: 6rem;
@@ -187,4 +176,29 @@ main {
   /* set a fixed height for the div */
   overflow-y: scroll;
   /* enable vertical scrollbar */
+}
+
+/* Custom scrollbar for WebKit browsers (Chrome, Safari) */
+.custom-scrollbar::-webkit-scrollbar {
+  width: 100px;
+  /* Width of the scrollbar */
+}
+
+.custom-scrollbar::-webkit-scrollbar-track {
+  background: #282c34;
+  /* Track (empty space) */
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  background-color: #888;
+  /* Scrollbar color */
+  border-radius: 10px;
+  /* Rounded corners */
+  border: 2px solid transparent;
+  /* Optional: adds space around scrollbar */
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb:hover {
+  background-color: #555;
+  /* Hover effect */
 }

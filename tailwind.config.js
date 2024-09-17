@@ -12,6 +12,9 @@ module.exports = {
       fontFamily: {
         sans: ['SUSE', 'sans-serif'], // Set Poppins as the default sans-serif font
       },
+      backdropBlur: {
+        'lg': '10px', // Adjust the blur amount as needed
+      },
       colors: {
         primaryBackground: "#E9F5DB",
         primaryBackgroundDark: "#0E0E10",
@@ -23,6 +26,7 @@ module.exports = {
         subBackGroundDark: "#303030",
         colorGreenish: "#87986A",
         colorDeepGreenish: "#718355",
+        glass: 'rgba(255, 255, 255, 0.1)', // Semi-transparent color for the glass effect
       },
       screens: {  // Add custom screen sizes if needed
         'xs': '475px',   // Extra small screens

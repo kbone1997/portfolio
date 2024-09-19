@@ -15,6 +15,9 @@ import mac from '../../assets/icons/icons8-mac-logo-48.png';
 import windows from '../../assets/icons/icons8-windows-10-48.png';
 import linux from '../../assets/icons/icons8-linux.gif';
 import reactNative from '../../assets/icons/reactNative.gif';
+import acceptLight from '../../assets/icons/accept.png';
+import acceptDark from '../../assets/icons/accept (1).png';
+import remove from '../../assets/icons/remove.png';
 
 
 const icons = {
@@ -34,7 +37,10 @@ const icons = {
     mac,
     windows,
     linux,
-    reactNative
+    reactNative,
+    acceptLight,
+    acceptDark,
+    remove
 };
 
 export default icons;

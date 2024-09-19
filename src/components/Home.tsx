@@ -69,9 +69,29 @@ interface SkillCardProps {
     Professional_Experience: boolean;
 }
 
-const SkillCard: React.FC<SkillCardProps> = ({ image, alt, label,proficiency }) => {
+const SkillCard: React.FC<SkillCardProps> = ({ image, alt, label, proficiency, Professional_Experience }) => {
     return (
-        <Tooltip arrow={false} className='relative p-0 m-0 font-medium' placement='bottom' content={<span className="bg-violet-500 px-2 py-1 rounded-lg">Tooltip content</span>}>
+        <Tooltip
+            arrow={false}
+            className='relative p-0 m-0 font-medium '
+            placement='bottom'
+            content=
+            {
+                <div className='flex flex-col rounded-xl '>
+                    <span
+                        className="bg-colorGreenish dark:bg-violet-500 px-2 py-1 border-b-2">
+                        Proficiency: {proficiency}
+                    </span>
+                    <div className='flex flex-row bg-colorGreenish dark:bg-violet-500 justify-center items-center'>
+                        <span
+                            className=" px-2 py-1">
+                            Experience:
+                        </span>
+                        <img className='w-6 h-6 ' src={Professional_Experience ? icons.acceptLight : icons.remove}></img>
+                    </div>
+
+                </div>
+            }>
             <div className="cursor-pointer flex flex-col justify-center items-center border-2 border-transparent hover:border-colorDeepGreenish hover:dark:border-violet-500 p-4 rounded-md">
                 <img src={image} alt={alt} className="w-12 h-12 rounded-md" />
                 <p className="text-sm dark:text-white">{label}</p>

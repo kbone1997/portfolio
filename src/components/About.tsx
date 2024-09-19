@@ -9,18 +9,24 @@ function About() {
     const timelineData = [
         {
             title: "School",
+            backTitle: "Result:",
             image: noor,
-            text: "Bir Shrestha Noor Mohammad Rifles Public School and College. \n\n2004 - 2015"
+            text: "Bir Shrestha Noor Mohammad Rifles Public School and College. \n\n2004 - 2015",
+            backText: "SSC: 2015 \nGPA: 5.00"
         },
         {
             title: "College",
+            backTitle: "Result:",
             image: noor,
-            text: "Bir Shrestha Noor Mohammad Rifles Public School and College. \n\n2015 - 2017"
+            text: "Bir Shrestha Noor Mohammad Rifles Public School and College. \n\n2015 - 2017",
+            backText: "HSC: 2017 \nGPA: 5.00"
         },
         {
             title: "University",
+            backTitle: "Result:",
             image: uiu,
-            text: "United International university.\n\n2018 - 2023"
+            text: "United International university.\n\n2018 - 2023",
+            backText: "BSCSE: 2018-2022 \nCGPA: 3.38"
         },
     ];
 
@@ -31,7 +37,7 @@ function About() {
                 <div className="w-full h-full flex flex-row overflow-x-auto">
                     {timelineData.map((data, index) => (
                         <div key={index} className={"flex w-full h-full items-center justify-center"}>
-                            <CardComponent title={data.title} image={data.image} text={data.text} />
+                            <CardComponent title={data.title} image={data.image} text={data.text} backText={data.backText} backTitle={data.backTitle} />
                         </div>
                     ))}
                 </div>

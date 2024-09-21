@@ -1,4 +1,5 @@
 import React, { useRef } from 'react';
+import { Analytics } from "@vercel/analytics/react"
 import "./App.css"; // Use for any additional custom styles if necessary
 import Header from './components/Header';
 import Footer from './components/Footer';
@@ -14,6 +15,7 @@ const App: React.FC = () => {
 
   return (
     <div className="flex flex-col min-h-screen font-sans " ref={ref} >
+      <Analytics />
       <Header />
       <main className="flex flex-col">
         <MultiLayer></MultiLayer>

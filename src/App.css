@@ -1,11 +1,9 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-/* src/styles/globals.css */
-@import url("https://fonts.googleapis.com/css2?family=SUSE:wght@400;700&display=swap");
 
+@import url("https://fonts.googleapis.com/css2?family=SUSE:wght@400;500;600;700&display=swap");
 
-/* index.css */
 html,
 body,
 #root {
@@ -22,123 +20,147 @@ main {
   flex: 1;
 }
 
-
-.App {
-  text-align: center;
+/* ===== LIGHT MODE BASE ===== */
+body {
+  background-color: #FDF8F3;
+  color: #2D3748;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+/* ===== DARK MODE BASE ===== */
+.dark body,
+.dark {
+  background-color: #0B1121;
+  color: #F1F5F9;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+/* ===== CARD STYLES ===== */
+.card-light {
+  background: #FFFFFF;
+  border: 1px solid #E8DDD4;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.card-dark {
+  background: #151D30;
+  border: 1px solid #2D3A5C;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
 }
 
-/* Container holding the cards */
-.timeline-container {
-  position: relative;
-  padding: 2rem 0;
+/* ===== GRADIENT TEXT ===== */
+.gradient-text-light {
+  background: linear-gradient(135deg, #E07A5F 0%, #D4A574 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
 }
 
-/* Individual card */
-.timeline-card {
-  margin-right: 6rem;
-  position: relative;
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  margin-bottom: 2rem;
-  padding: 1rem;
-  border-radius: 5px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+.gradient-text-dark {
+  background: linear-gradient(135deg, #6366F1 0%, #A78BFA 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
 }
 
-.timeline-card .card {
-  width: 100%;
-  /* Ensure card fills its container */
-}
-
-/* Adjustments for smaller screens */
-@media (max-width: 768px) {
-  .timeline-card {
-    flex-direction: column;
-    align-items: flex-start;
-    text-align: left;
-  }
-
-  .timeline-card-left,
-  .timeline-card-right {
-    margin: 0 auto;
-  }
-
-  .timeline-line {
-    left: 10%;
-  }
-}
-
-
-
-.App-link {
-  color: #61dafb;
-}
-
-/* Custom CSS for scrolling */
-.row.flex-nowrap {
-  display: flex;
-  flex-wrap: nowrap;
-  overflow-x: auto;
-  -webkit-overflow-scrolling: touch;
-  /* For smooth scrolling on iOS */
-}
-
-.row.flex-nowrap .card {
-  flex: 0 0 auto;
-}
-
-
+/* ===== PROGRESS BAR ===== */
 .progress-bar {
   position: absolute;
   top: 0;
   left: 0;
-  height: 4px;
-  background-color: #ffffff;
+  height: 3px;
   width: 100%;
   transform-origin: left;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-
-  to {
-    transform: rotate(360deg);
-  }
+.progress-bar-light {
+  background: linear-gradient(90deg, #E07A5F 0%, #D4A574 100%);
 }
 
+.progress-bar-dark {
+  background: linear-gradient(90deg, #6366F1 0%, #A78BFA 100%);
+}
+
+/* ===== BUTTON STYLES ===== */
+.btn-primary {
+  @apply px-6 py-3 rounded-xl font-semibold transition-all duration-300;
+  cursor: pointer;
+}
+
+.btn-primary-light {
+  background: linear-gradient(135deg, #E07A5F 0%, #C96A52 100%);
+  color: white;
+}
+
+.btn-primary-light:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 25px rgba(224, 122, 95, 0.35);
+}
+
+.btn-primary-dark {
+  background: linear-gradient(135deg, #6366F1 0%, #818CF8 100%);
+  color: white;
+}
+
+.btn-primary-dark:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 25px rgba(99, 102, 241, 0.4);
+}
+
+/* ===== INPUT STYLES ===== */
+.input-light {
+  @apply w-full px-4 py-3 rounded-xl transition-all duration-300;
+  background: #FFFFFF;
+  border: 2px solid #E8DDD4;
+  color: #2D3748;
+}
+
+.input-light::placeholder {
+  color: #A0AEC0;
+}
+
+.input-light:focus {
+  outline: none;
+  border-color: #E07A5F;
+  box-shadow: 0 0 0 4px rgba(224, 122, 95, 0.15);
+}
+
+.input-dark {
+  @apply w-full px-4 py-3 rounded-xl transition-all duration-300;
+  background: #1A2540;
+  border: 2px solid #2D3A5C;
+  color: #F1F5F9;
+}
+
+.input-dark::placeholder {
+  color: #64748B;
+}
+
+.input-dark:focus {
+  outline: none;
+  border-color: #6366F1;
+  box-shadow: 0 0 0 4px rgba(99, 102, 241, 0.2);
+}
+
+/* ===== HOVER EFFECTS ===== */
+.hover-lift {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.hover-lift:hover {
+  transform: translateY(-4px);
+}
+
+.hover-lift-light:hover {
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.1);
+}
+
+.hover-lift-dark:hover {
+  box-shadow: 0 12px 30px rgba(99, 102, 241, 0.2);
+}
+
+/* ===== CARD FLIP ANIMATION ===== */
 .card-container {
   perspective: 1000px;
-}
-
-.card {
-  transition: transform 0.6s, box-shadow 0.3s;
   transform-style: preserve-3d;
-  position: relative;
 }
 
 .card-inner {
@@ -146,59 +168,117 @@ main {
   width: 100%;
   height: 100%;
   transform-style: preserve-3d;
-  transition: transform 0.6s;
 }
 
-.card-front {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  backface-visibility: hidden;
-  border-radius: 15px;
-  top: 0;
-  left: 0;
-}
-
+.card-front,
 .card-back {
   position: absolute;
   width: 100%;
   height: 100%;
   backface-visibility: hidden;
-  border-radius: 15px;
+  border-radius: 16px;
   top: 0;
   left: 0;
+}
+
+.card-back {
   transform: rotateY(180deg);
 }
 
-
-.scrollable-div {
-  height: 100vh;
-  /* set a fixed height for the div */
-  overflow-y: scroll;
-  /* enable vertical scrollbar */
-}
-
-/* Custom scrollbar for WebKit browsers (Chrome, Safari) */
+/* ===== SCROLLBAR ===== */
 .custom-scrollbar::-webkit-scrollbar {
-  width: 100px;
-  /* Width of the scrollbar */
+  width: 6px;
 }
 
 .custom-scrollbar::-webkit-scrollbar-track {
-  background: #282c34;
-  /* Track (empty space) */
+  background: transparent;
 }
 
-.custom-scrollbar::-webkit-scrollbar-thumb {
-  background-color: #888;
-  /* Scrollbar color */
+.custom-scrollbar-light::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, #E07A5F 0%, #D4A574 100%);
   border-radius: 10px;
-  /* Rounded corners */
-  border: 2px solid transparent;
-  /* Optional: adds space around scrollbar */
 }
 
-.custom-scrollbar::-webkit-scrollbar-thumb:hover {
-  background-color: #555;
-  /* Hover effect */
+.custom-scrollbar-dark::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, #6366F1 0%, #A78BFA 100%);
+  border-radius: 10px;
+}
+
+/* ===== NAV LINK STYLES ===== */
+.nav-link-light {
+  color: #2D3748;
+  font-weight: 500;
+  transition: color 0.2s ease;
+}
+
+.nav-link-light:hover {
+  color: #E07A5F;
+}
+
+.nav-link-dark {
+  color: #F1F5F9;
+  font-weight: 500;
+  transition: color 0.2s ease;
+}
+
+.nav-link-dark:hover {
+  color: #818CF8;
+}
+
+/* ===== SKILL CARD ===== */
+.skill-card-light {
+  background: #FFFFFF;
+  border: 1px solid #E8DDD4;
+  transition: all 0.3s ease;
+}
+
+.skill-card-light:hover {
+  border-color: #E07A5F;
+  box-shadow: 0 8px 20px rgba(224, 122, 95, 0.15);
+}
+
+.skill-card-dark {
+  background: #1A2540;
+  border: 1px solid #2D3A5C;
+  transition: all 0.3s ease;
+}
+
+.skill-card-dark:hover {
+  border-color: #6366F1;
+  box-shadow: 0 8px 20px rgba(99, 102, 241, 0.2);
+}
+
+/* ===== SECTION CARD ===== */
+.section-card-light {
+  background: #FFFFFF;
+  border: 1px solid #E8DDD4;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
+}
+
+.section-card-dark {
+  background: #151D30;
+  border: 1px solid #2D3A5C;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+}
+
+/* ===== HEADER ===== */
+.header-light {
+  background: rgba(253, 248, 243, 0.9);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid #E8DDD4;
+}
+
+.header-dark {
+  background: rgba(11, 17, 33, 0.9);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid #2D3A5C;
+}
+
+/* ===== TOOLTIP ===== */
+.tooltip-light {
+  background: linear-gradient(135deg, #E07A5F 0%, #D4A574 100%);
+}
+
+.tooltip-dark {
+  background: linear-gradient(135deg, #6366F1 0%, #A78BFA 100%);
 }

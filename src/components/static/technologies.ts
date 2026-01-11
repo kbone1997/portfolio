@@ -20,10 +20,10 @@ const programming_language = [
         Professional_Experience: false,
     },
     {
-        name: "Java",
-        icon: icons.java,
-        proficiency: "7/10",
-        Professional_Experience: false,
+        name: "Dart",
+        icon: icons.flutter,
+        proficiency: "8/10",
+        Professional_Experience: true,
     }
 ]
 

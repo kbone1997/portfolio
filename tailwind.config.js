@@ -10,35 +10,52 @@ module.exports = {
   theme: {
     extend: {
       fontFamily: {
-        sans: ['SUSE', 'sans-serif'], // Set Poppins as the default sans-serif font
+        sans: ['SUSE', 'sans-serif'],
       },
       backdropBlur: {
-        'lg': '10px', // Adjust the blur amount as needed
+        'lg': '10px',
+        'xl': '20px',
       },
       colors: {
-        primaryBackground: "#E9F5DB",
-        primaryBackgroundDark: "#0E0E10",
-        secondaryBackground: "#CFE1B9",
-        secondaryBackgroundDark: "#151314",
-        sectionBackground: "#B5C99A",
-        sectionBackgroundDark: "#5A5A5A",
-        subBackGround: "",
-        subBackGroundDark: "#303030",
-        colorGreenish: "#87986A",
-        colorDeepGreenish: "#718355",
-        glass: 'rgba(255, 255, 255, 0.1)', // Semi-transparent color for the glass effect
+        // Light mode - Warm cream/beige palette
+        light: {
+          bg: '#FDF8F3',
+          card: '#FFFFFF',
+          cardHover: '#FEF7F0',
+          accent: '#E07A5F',
+          accentHover: '#C96A52',
+          text: '#2D3748',
+          textMuted: '#718096',
+          border: '#E8DDD4',
+        },
+        // Dark mode - Deep blue/purple palette
+        dark: {
+          bg: '#0B1121',
+          card: '#151D30',
+          cardHover: '#1A2540',
+          accent: '#6366F1',
+          accentHover: '#818CF8',
+          text: '#F1F5F9',
+          textMuted: '#94A3B8',
+          border: '#2D3A5C',
+        },
       },
-      screens: {  // Add custom screen sizes if needed
-        'xs': '475px',   // Extra small screens
-        'sm': '640px',   // Small screens (default Tailwind)
-        'md': '768px',   // Medium screens (default Tailwind)
-        'lg': '1024px',  // Large screens (default Tailwind)
-        'xl': '1280px',  // Extra large screens (default Tailwind)
-        '2xl': '1536px', // Extra-extra large screens (default Tailwind)
-        '3xl': '1800px', // Custom larger screen for desktops
+      screens: {
+        'xs': '475px',
+        'sm': '640px',
+        'md': '768px',
+        'lg': '1024px',
+        'xl': '1280px',
+        '2xl': '1536px',
+        '3xl': '1800px',
       },
       height: {
         '4/5': '80%',
+      },
+      boxShadow: {
+        'card-light': '0 4px 20px rgba(0, 0, 0, 0.08)',
+        'card-dark': '0 4px 20px rgba(0, 0, 0, 0.4)',
+        'glow': '0 0 30px rgba(99, 102, 241, 0.4)',
       },
     },
   },

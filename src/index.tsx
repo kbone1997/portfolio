@@ -4,6 +4,13 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 
+// Suppress ResizeObserver loop error (benign error from third-party libraries)
+const resizeObserverErr = (e: ErrorEvent) => {
+  if (e.message === 'ResizeObserver loop completed with undelivered notifications.') {
+    e.stopImmediatePropagation();
+  }
+};
+window.addEventListener('error', resizeObserverErr);
 
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement
